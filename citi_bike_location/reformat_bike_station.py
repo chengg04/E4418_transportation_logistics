@@ -9,16 +9,16 @@ with open('citibike-tripdata-201504.csv',newline='') as usage1504:
         csvrows.append(row)
 #create a csv on arrival/departure info
 reform1504=open('citibike_reform_201504.csv','w',newline='')
-citi_writerobj=csv.DictWriter(reform1504,fieldnames=['Datetime',
+citi_writerobj=csv.DictWriter(reform1504,fieldnames=['date',
     'interval','weekday','station id',
-      'arrival','departure'])
+      'pick','drop'])
 citi_writerobj.writeheader()
 #create a csv pair station id with lat/lon
 reform_loc=open('citibike_station.csv','w',newline='')
 loc_writeobj=csv.DictWriter(reform_loc,fieldnames=['station id','lat','lon'])
 loc_writeobj.writeheader()
 stations=set([])
-for i in range(0,len(csvrows)-1):
+for i in range(len(csvrows)):
     if csvrows[i][3] not in stations:
         stations.add(csvrows[i][3])
         loc_writeobj.writerow({'station id':csvrows[i][3],
