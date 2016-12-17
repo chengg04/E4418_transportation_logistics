@@ -29,7 +29,7 @@ for i in range(30):
         for j in range(len(starows)):
             citi_writerobj.writerow({'date':i+1,'interval':k+1,
                                      'weekday':wday[i], 'station id': starows[j][0],
-                                   'pick': 0.0, 'drop': 0.0})
+                                   'pick': picklist[i*12*len(starows)+k*len(starows)+j], 'drop': droplist[i*12*len(starows)+k*len(starows)+j]})
 
 
 
