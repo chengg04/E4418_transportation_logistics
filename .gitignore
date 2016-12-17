@@ -2,3 +2,4 @@
 bfg.jar
 citi_bike_location/.idea/workspace.xml
 citi_bike_location/.idea/workspace.xml
+*.sqlite
